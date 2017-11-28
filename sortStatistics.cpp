@@ -10,24 +10,51 @@
 ////////////////////////////
 #include "arrayList.h"
 #include <iostream>
+#include <iosmanip>
 #include <fstream>
 #include <cstring>
 using namespace std; 
 void outputD(ArrayList<int>& list) {
 	ArrayList<int> selectionList = list; 
+	ArrayList<int> mergeList = list; 
+	ArrayList<int> quickList = list; 
 	cout << "Filename: " << fileName << endl; 
-	cout << "Number of items: " << list.getSize(); 
+	cout << "Number of items: " << list.getSize();
+
 	cout <<	"Selection Sort Results:" << endl; 
-	list.
+	selectionSort(selectionList); 
+	// ADDDDD PRINT FUNCTION IN ARRAYLIST??????? OR << OVERRIDE 
+	cout << selectionList << endl; 
+	cout << "Merge Sort Results: " << endl; 
+	mergeSort(mergeList); 
+	cout << mergeList << endl;
+    cout << "Quick Sort Results:" << endl;
+	quickSort(quickList); 
+	cout << quickList << endl; 	
+	stats(selectionList, mergeList, quickList); 
 }
 
 void output(char* fileName, ArrayList<int>& list) {
 	cout << "Filename: " << fileName << endl; 
 	cout << "Number of items: " << list.getSize(); 
+
 	
 }
 
-void stats() {
+void stats(ArrayList<int>& sList, ArrayList<int>& mList, ArrayList<int>& qList) {
+	// NumAcess
+	cout << setw(15) << left << "NumAccess: " 
+		 << setw(15) << "Selection= " << sList.getNumAccess() 
+		 << setw(15) << "Merge= " << mList.getNumAccess() 
+		 << setw(15) << "Quick= " << qList.getNumAccess() << endl; 
+	// NumSwap 
+	cout << setw(15) << left << "NumSwap: " 
+		 << setw(15) << "Selection= " << sList.getNumSwap() 
+		 << setw(15) << "Merge= " << mList.getNumSwap() 
+		 << setw(15) << "Quick= " << qList.getNumSwap() << endl; 
+
+
+	
 
 }
 
