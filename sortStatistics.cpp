@@ -52,14 +52,27 @@ void stats(ArrayList<int>& sList, ArrayList<int>& mList, ArrayList<int>& qList) 
 		 << setw(15) << "Selection= " << sList.getNumSwap() 
 		 << setw(15) << "Merge= " << mList.getNumSwap() 
 		 << setw(15) << "Quick= " << qList.getNumSwap() << endl; 
-
-
-	
-
+	// NumRemove 
+	cout << setw(15) << left << "NumRemove: " 
+		 << setw(15) << "Selection= " << sList.getNumRemove() 
+		 << setw(15) << "Merge= " << mList.getNumRemove() 
+		 << setw(15) << "Quick= " << qList.getNumRemove() << endl; 
+	// NumInsertAt 
+	cout << setw(15) << left << "NumInsertAt: " 
+		 << setw(15) << "Selection= " << sList.getNumInsertAt() 
+		 << setw(15) << "Merge= " << mList.getNumInsertAt()
+		 << setw(15) << "Quick= " << qList.getNumInsertAt() << endl; 
+	// NumAppend 
+	cout << setw(15) << left << "NumAppend: " 
+		 << setw(15) << "Selection= " << sList.getNumAppend() 
+		 << setw(15) << "Merge= " << mList.getNumAppend() 
+		 << setw(15) << "Quick= " << qList.getNumAppend() << endl; 
 }
 
 void selectionSort(ArrayList<int>& list) {
+	int startScan, minIndex, minValue; 
 
+	for (startScan = 0; startScan < list.getSize() - 1; ++startScan
 }
 
 void mergeSort(ArrayList<int>& list) {
