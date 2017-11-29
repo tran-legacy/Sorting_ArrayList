@@ -1,13 +1,14 @@
 /***************************
  * Tran Le
  * CSS342 - Project #5 
- * [INSERT HOW LONG HERE] 
+ * 10 hours 
  * Vim on Cygwin 
 ****************************/
 
 /////////////////////////////
 // ArrayList class 
-// [DESCRIBE THE CLASS HERE] 
+// A smart array that can remove and insert with ease
+// like a vector
 /////////////////////////////
 #ifndef ARRAY_LIST
 #define ARRAY_LIST
@@ -27,17 +28,18 @@ public:
 		delete [] array; 
 		array = NULL;
 	}	
-		
+
+	// FUNCTIONS
 	bool isEmpty() const override; 
 	int getSize() const override; 
 	void insertAt(int index, const T& newEntry) throw(std::out_of_range) override; 
 	void removeAt(int index) throw(std::out_of_range) override; 
 	void append(const T& value) override; 
-    void swap( int from, int to) throw( std::out_of_range) override;
-
+    void swap( int from, int to) throw( std::out_of_range) override; 
     T& getAt( int index) const throw ( std::out_of_range) override; 
 	void clearAll() override; 
-
+	void print() const; 
+	// STATS 
 	// Clear out any instrumentation 
 	void clearStatistics() override; 
 	 // Provide statistics on number of times method was performed
@@ -50,7 +52,7 @@ public:
 	// OPERATOR OVERLOAD
 	virtual T& operator[] (int index) const throw(std::out_of_range) override; 
 	ArrayList<T>& operator= ( const ArrayList<T>& rhs);
-
+	
 private: 
 	T* array; 
 	int capacity; 

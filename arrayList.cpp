@@ -1,7 +1,7 @@
 /***************************
  * Tran Le
  * CSS342 - Project #5
- * [INSERT HOW LONG HERE]
+ * 10 hours
  * Vim on Cygwin
 ****************************/
 
@@ -123,12 +123,19 @@ T& ArrayList<T>::getAt(int index) const throw (std::out_of_range) {
 	return array[index];
 }
 
-//// clear all???? ////
+//// when size = 0, any data in array is no longer accessible ////
 template<class T>
 void ArrayList<T>::clearAll() {
 	this->size = 0; 
 }
 
+template<class T>
+void ArrayList<T>::print() const {
+	for (int i = 0; i < this->size; ++i) {
+		std::cout << array[i] << "|";
+	}
+	std::cout << std::endl;
+}
 /*******************OPERATOR OVERLOAD**********************/ 
 template<class T>
 T& ArrayList<T>::operator[] (int index) const throw (std::out_of_range) {
